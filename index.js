@@ -3,6 +3,7 @@ const Relay = require('./lib/relay')
 const RelayPool = require('./lib/relay-pool')
 const noble = require('noble-secp256k1')
 const crypto = require('crypto')
+const nip98 = require('./lib/nip98')
 
 async function signId(privkey, id) {
 	return await noble.schnorr.sign(id, privkey)
@@ -167,6 +168,7 @@ module.exports = {
 	createDelegationEvent,
 	createDelegation,
 	signDelegationToken,
-	eventCommitment
+	eventCommitment,
+	nip98
 }
 
